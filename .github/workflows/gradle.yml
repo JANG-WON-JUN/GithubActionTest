@@ -42,4 +42,4 @@ jobs:
             USER_NAME: ${{secrets.REMOTE_USER}}
       
         run: |
-          echo test
+          touch fromGit.txt
