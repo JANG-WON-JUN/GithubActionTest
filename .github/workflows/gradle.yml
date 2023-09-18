@@ -34,12 +34,13 @@ jobs:
       #with:
         #arguments: build
       #run : ./gradlew clean build
+
       - uses: actions/checkout@v2 
       - name: Build & Deploy
         env:
-            PRIVATE_KEY: ${{ secrets.REMOTE_PRIVATE_KEY }}
-            HOSTNAME: ${{secrets.REMOTE_IP}}
-            USER_NAME: ${{secrets.REMOTE_USER}}
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{secrets.SSH_HOST}}
+            USER_NAME: ${{secrets.USER_NAME}}
       
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
