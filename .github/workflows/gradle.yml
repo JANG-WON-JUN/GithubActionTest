@@ -52,7 +52,7 @@ jobs:
           script_stop: true
           script: |
             cd /home
-            touch fromGithubAction.txt
+            sudo touch fromGithubAction.txt
 
       # 등록했던 인바운드 규칙을 삭제하기
       - name: Remove Github Actions IP From Security Group
