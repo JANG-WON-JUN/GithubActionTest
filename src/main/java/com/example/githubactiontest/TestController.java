@@ -11,6 +11,6 @@ public class TestController {
 	public ResponseEntity<String> test() {
 		System.out.println("system log");
 		
-		return ResponseEntity.ok("안녕하세요!");
+		return ResponseEntity.ok("안녕하세요!zzz");
 	}
 }
