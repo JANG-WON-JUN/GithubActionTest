@@ -14,6 +14,7 @@ RUN echo "/etc/init.d/ssh start" >> /root/.bashrc
 RUN echo "cd /root/workspace" >> /root/.bashrc
 
 COPY ./build/libs/GithubActionTest-0.0.1-SNAPSHOT.jar /root/workspace
-CMD [“java”, “-jar”, ”GithubActionTest-0.0.1-SNAPSHOT.jar”]
+#CMD [“java”, “-jar”, ”GithubActionTest-0.0.1-SNAPSHOT.jar”]
+ENTRYPOINT [“java”, “-jar”, ”GithubActionTest-0.0.1-SNAPSHOT.jar”]
 
 EXPOSE 8080 22
