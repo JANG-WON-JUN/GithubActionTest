@@ -40,12 +40,7 @@ jobs:
         run: ./gradlew bootJar
 
       # 생성된 jar 파일을 도커 작업에서 사용할 수 있도록 캐싱하기
-      - name: Cache PhysicalTheraphy build directory
-        uses: actions/cache@v3
-        with:
-          path: ./
-          key: ${{ runner.os }}-physicaltheraphy-build-cache-${{ steps.short-sha.outputs.sha }}
-        
+
       # 도커 이미지를 만들기 전에 이미지에 대한 정보를 설정하기
       - name: Docker meta
         id: docker_meta
@@ -65,11 +60,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # 도커 이미지 빌드 전 캐시에 저장된 jar 파일에 접근할 수 있도록 설정하기
-      - name: Restore Gradle cache directory
-        uses: actions/cache@v3
-        with:
-          path: ./
-          key: ${{ runner.os }}-physicaltheraphy-build-cache-${{ steps.short-sha.outputs.sha }}
 
       # 도커허브에 생성한 이미지를 푸시하기
       - name: Build and push
