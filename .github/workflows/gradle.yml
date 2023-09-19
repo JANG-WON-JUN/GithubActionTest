@@ -106,7 +106,6 @@ jobs:
             sudo docker rm -f spofo-app
             sudo docker run -p 8080:8080 -itd --name spofo-app jangwonjun/spofo:latest
             
-
       # 등록했던 인바운드 규칙을 삭제하기
       - name: Remove Github Actions IP From Security Group
         run: |
