@@ -76,6 +76,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: .
+          file: ./Dockerfile
           script_stop: true
           push: true
           tags: jangwonjun/spofo:latest
