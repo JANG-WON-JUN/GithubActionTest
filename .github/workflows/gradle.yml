@@ -102,8 +102,8 @@ jobs:
           # 스크립트 중간에 실패하면 다음 스크립트를 실행하지 않는 옵션 true로 주기
           script_stop: true
           script: |
-            docker rm -f spofo-app
-            docker run -p 8080:8080 -itd --name spofo-app jangwonjun/spofo:latest
+            sudo docker rm -f spofo-app
+            sudo docker run -p 8080:8080 -itd --name spofo-app jangwonjun/spofo:latest
             
 
       # 등록했던 인바운드 규칙을 삭제하기
