@@ -37,7 +37,7 @@ jobs:
 
       # gradle로 빌드하여 jar 파일 생성
       - name: Execute Gradle build
-        run: ./gradlew clean build
+        run: ./gradlew bootJar
         
       # 도커 이미지를 만들기 전에 이미지에 대한 정보를 설정
       - name: Docker meta
@@ -62,6 +62,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          script_stop: true
           push: true
           tags: jangwonjun/spofo:latest
           
