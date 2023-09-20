@@ -64,7 +64,11 @@ jobs:
         with:
           name: build-result
           path: ./build/libs
-        
+          
+      - uses: actions/upload-artifact@master
+        with:
+          name: Dockerfile
+          path: ./Dockerfile
   push-to-dockerhub:
     runs-on: ubuntu-latest
     needs: build
@@ -77,6 +81,11 @@ jobs:
         with:
           name: build-result
           path: build/libs
+            
+      - uses: actions/download-artifact@master
+        with:
+          name: Dockerfile
+          path: ./
           
       # 도커 이미지를 만들기 전에 이미지에 대한 정보를 설정하기
       - name: Docker meta
