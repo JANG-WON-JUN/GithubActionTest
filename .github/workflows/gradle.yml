@@ -130,7 +130,7 @@ jobs:
           
   deploy:
     runs-on: ubuntu-latest
-    needs: push-to-dockerhub
+    needs: push_to_registry
     steps:
 
       # github action의 IP가 수시로 바뀌므로
