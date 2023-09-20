@@ -39,7 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # github action의 가상환경에 내 프로젝트를 체크아웃하기
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       
       # github action의 가상환경에 빌드를 위해 jdk 17 설치하기
       - name: Set up JDK 17
