@@ -14,8 +14,6 @@
 #	     키 내용...
 #	     -----END RSA PRIVATE KEY-----
 
-# AWS_SSH_PORT -> EC2 ssh 접속 시 필요한 PORT (ssh는 22번 포트로 고정이므로 22 입력하면 됨)
-
 # AWS_SSH_USERNAME -> EC2 ssh 접속 시 필요한 USERNAME (ec2의 ssh 연결 방법에 보면 나와있음)
 #	 ex. ubuntu
 
@@ -141,7 +139,7 @@ jobs:
           host: ${{ secrets.AWS_SSH_HOST }}
           username: ${{ secrets.AWS_SSH_USERNAME }}
           key: ${{ secrets.AWS_SSH_KEY }}
-          #port: ${{ secrets.AWS_SSH_PORT }}
+
           # 스크립트 중간에 실패하면 다음 스크립트를 실행하지 않는 옵션 true로 주기
           script_stop: true
           script: |
