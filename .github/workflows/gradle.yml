@@ -61,11 +61,13 @@ jobs:
       # job은 별도의 가상환경에서 실행되므로
       # job 사이에 파일 공유를 위해 빌드 결과물인 jar 파일을 upload함
       - uses: actions/upload-artifact@master
+      - name: Upload jar file
         with:
           name: build-result
           path: ./build/libs
           
       - uses: actions/upload-artifact@master
+      - name: Download Dockerfile
         with:
           name: Dockerfile
           path: ./Dockerfile
@@ -78,11 +80,13 @@ jobs:
       #- uses: actions/checkout@master
       
       - uses: actions/download-artifact@master
+      - name: Download jar file
         with:
           name: build-result
           path: build/libs
             
       - uses: actions/download-artifact@master
+      - name: Download Dockerfile
         with:
           name: Dockerfile
           path: ./
@@ -147,7 +151,7 @@ jobs:
           host: ${{ secrets.AWS_SSH_HOST }}
           username: ${{ secrets.AWS_SSH_USERNAME }}
           key: ${{ secrets.AWS_SSH_KEY }}
-          port: ${{ secrets.AWS_SSH_PORT }}
+          #port: ${{ secrets.AWS_SSH_PORT }}
           # 스크립트 중간에 실패하면 다음 스크립트를 실행하지 않는 옵션 true로 주기
           script_stop: true
           script: |
