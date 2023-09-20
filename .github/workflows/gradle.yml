@@ -60,14 +60,14 @@ jobs:
 
       # job은 별도의 가상환경에서 실행되므로
       # job 사이에 파일 공유를 위해 빌드 결과물인 jar 파일을 upload함
-      - uses: actions/upload-artifact@master
       - name: Upload jar file
+        uses: actions/upload-artifact@master
         with:
           name: build-result
           path: ./build/libs
-          
-      - uses: actions/upload-artifact@master
-      - name: Download Dockerfile
+
+      - name: Upload Dockerfile
+        uses: actions/upload-artifact@master
         with:
           name: Dockerfile
           path: ./Dockerfile
@@ -78,15 +78,15 @@ jobs:
       # 이전 job에서 업로드 한 jar 파일을 다운로드하여
       # docker image 생성 시 사용
       #- uses: actions/checkout@master
-      
-      - uses: actions/download-artifact@master
+
       - name: Download jar file
+        uses: actions/download-artifact@master
         with:
           name: build-result
           path: build/libs
-            
-      - uses: actions/download-artifact@master
+
       - name: Download Dockerfile
+        uses: actions/download-artifact@master
         with:
           name: Dockerfile
           path: ./
