@@ -23,6 +23,7 @@
 # DOCKERHUB_USERNAME -> 도커 허브에 접속하기 위한 id 값
 #	 ex. 도커 허브에 로그인할 때의 계정을 입력
 
+
 name: spofo-auth CI / CD with Gradle
 
 on:
