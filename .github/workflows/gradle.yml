@@ -34,18 +34,20 @@ permissions:
   contents: read
 
 jobs:
+  set_for_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out my other private repo
+        uses: actions/checkout@v3
+        with:
+          repository: SP0F0/spofo-auth
+          
   build:
     runs-on: ubuntu-latest
     steps:
       # github action의 가상환경에 내 프로젝트를 체크아웃하기
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Check out my other private repo
-        uses: actions/checkout@v3
-        with:
-          repository: SP0F0/spofo-auth
-          path: /test/repo
       
       # github action의 가상환경에 빌드를 위해 jdk 17 설치하기
       - name: Set up JDK 17
