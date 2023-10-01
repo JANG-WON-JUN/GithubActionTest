@@ -40,8 +40,8 @@ jobs:
       - name: Check out my other private repo
         uses: actions/checkout@v3
         with:
-          repository: SP0F0/spofo-auth
-          path: our-source
+          repository: JANG-WON-JUN/testPrivate
+      - run: ls -al
           
   build:
     runs-on: ubuntu-latest
