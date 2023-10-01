@@ -40,7 +40,7 @@ jobs:
       - name: Check out my other private repo
         uses: actions/checkout@v3
         with:
-          repository: SP0F0/env
+          repository: SP0F0/spofo-env
           token: ${{ secrets.GIT_PAT }}
       - run: echo 'Hi Github'
       - run: ls -al
