@@ -42,6 +42,7 @@ jobs:
         with:
           repository: JANG-WON-JUN/testPrivate
           token: ${{ secrets.GIT_PAT }}
+      - run: echo 'Hi Github'
       - run: ls -al
           
   build:
