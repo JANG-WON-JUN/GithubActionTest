@@ -42,14 +42,12 @@ jobs:
         with:
           repository: SP0F0/spofo-env
           token: ${{ secrets.GIT_PAT }}
-      - run: echo 'Hi Github'
-      - run: ls -al
 
       - name: Upload env files
         uses: actions/upload-artifact@master
         with:
           name: env-files
-          path: ./auth
+          path: ./stock
           
   build:
     runs-on: ubuntu-latest
